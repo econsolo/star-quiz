@@ -54,7 +54,11 @@ export class UtilService {
    * Return user[] from localStorage as Json Object
    */
   public get(): any[] {
-    return JSON.parse(localStorage.getItem('users'));
+    let users = JSON.parse(localStorage.getItem('users'));
+    if (!users) {
+      users = [];
+    }
+    return users;
   }
 
   /**
