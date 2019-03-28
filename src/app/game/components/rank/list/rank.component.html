@@ -1,0 +1,24 @@
+<div class="mat-elevation-z8 margin-top-10">
+    <mat-table [dataSource]="dsRank">
+  
+      <ng-container matColumnDef="name">
+        <mat-header-cell mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <mat-header-cell mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email | hidemail }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="total">
+        <mat-header-cell mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.total}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="['name','email','total']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['name','email','total'];">
+      </mat-row>
+  
+    </mat-table>
+  </div>

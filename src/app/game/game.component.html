@@ -1,0 +1,48 @@
+<div id="content">
+  <mat-drawer-container [hasBackdrop]="true" class="height-100">
+    <mat-drawer #drawer [mode]="'over'">
+      <mat-toolbar color="accent">
+        <mat-toolbar-row>
+          <span>Menu</span>
+          <span class="fill-remaining-space"></span>
+          <mat-icon (click)="drawer.toggle();" class="click">close</mat-icon>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+      <mat-list>
+        <h3 matSubheader>Star Quiz</h3>
+
+        <mat-list-item *ngFor="let menu of menus" (click)="goTo(menu.path);drawer.close();" class="click">
+          <mat-icon matListIcon>
+            {{ menu.icon }}
+          </mat-icon>
+          <h4 matLine>
+            {{ menu.label }}
+          </h4>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+
+      </mat-list>
+
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar color="accent" class="mat-elevation-z5">
+        <mat-icon (click)="drawer.toggle();" class="click">menu</mat-icon>&nbsp;
+        <span class="click">
+          Star Quiz
+        </span>
+
+        <span class="fill-remaining-space"></span>
+        <div>
+          <mat-icon>timer</mat-icon>
+          <span>&nbsp;{{ timeRemaining | watch }}</span>
+        </div>
+      </mat-toolbar>
+
+      <div class="margin-8">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

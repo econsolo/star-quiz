@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>Now, will be worth half of points</h2>
+
+
+<mat-dialog-content>
+
+  <mat-list>
+    <h3 mat-subheader>Details</h3>
+    <mat-list-item>
+      <h4 mat-line><b>Specie:</b> {{ getInfo(species) }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Planet:</b> {{ getInfo(planet) }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Gender:</b> {{ character.gender | titlecase }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Mass:</b> {{ character.mass | mass }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Height:</b> {{ character.height | height }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Birth Year:</b> {{ character.birth_year }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Movies:</b> {{ getInfo(movies) }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Vehicles:</b> {{ getInfo(vehicles) }}</h4>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Appearence</h3>
+    <mat-list-item>
+      <h4 mat-line><b>Eye Color:</b> {{ character.eye_color | titlecase }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Hair Color:</b> {{ character.hair_color | titlecase }}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 mat-line><b>Skin Color:</b> {{ character.skin_color | titlecase }}</h4>
+    </mat-list-item>
+
+  </mat-list>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="row margin-top-10">
+  <button mat-flat-button color="accent" type="button" class="width-100 font-12" (click)="dialogRef.close()">
+    Gotcha!&nbsp;
+    <mat-icon>check</mat-icon>
+  </button>
+</mat-dialog-actions>
