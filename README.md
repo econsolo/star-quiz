@@ -42,4 +42,4 @@ $ ng serve
 - [x] Popup para coletar Nome e E-mail do jogador e sua pontuação final
 - [x] Tela com apresentação de todos os jogadores e sua pontuação final (localStorage)
 - [x] Preparado para o [PWA](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br)
-- [x] Requisições para a SWAPI cacheáveis (quando disponível o service-worker)
+- [x] Requisições para a [SWAPI](https://swapi.co/) cacheáveis (quando disponível o service-worker)
