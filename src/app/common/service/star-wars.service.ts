@@ -8,6 +8,9 @@ import { Observable, Subject } from 'rxjs';
 })
 export class StarWarsService {
 
+  protected _destroyTimer = new Subject();
+  public destroyTimerEvent = this._destroyTimer.asObservable();
+
   protected _timeSubject = new Subject();
   public timeEvent = this._timeSubject.asObservable();
 
@@ -53,5 +56,13 @@ export class StarWarsService {
    */
   public emitNewGame(): void {
     this._newGameSubject.next();
+  }
+
+  /**
+   * Emit an event saying that someone wanna destroy the game
+   * Someone who's listening will be notified about
+   */
+  public emitDestroyGame(): void {
+    this._destroyTimer.next();
   }
 }

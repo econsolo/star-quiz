@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UtilService } from 'src/app/common/util/util.service';
 import { StarWarsService } from 'src/app/common/service/star-wars.service';
@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.css']
 })
-export class StartComponent implements OnInit {
-
+export class StartComponent implements OnInit, OnDestroy {
+  
   public form: FormGroup;
   public swapiResults: any;
   public canPlay = true;
@@ -33,6 +33,10 @@ export class StartComponent implements OnInit {
       this.canPlay = false;
       this.calculatePoints();
     });
+  }
+
+  ngOnDestroy() {
+    this.starWarsService.emitDestroyGame();
   }
 
   /**

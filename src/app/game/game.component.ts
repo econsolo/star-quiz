@@ -21,8 +21,15 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.getMenus();
+
     // Listening an event when someone request a 'new game'
     this.starWarsService.newGameEvent.subscribe(() => this.newGame());
+
+    // Listening an event when someone left the game page
+    this.starWarsService.destroyTimerEvent.subscribe(() => {
+      this.timeRemaining = 0;
+      clearInterval(this.interval);
+    });
   }
 
   /**
@@ -48,7 +55,7 @@ export class GameComponent implements OnInit {
    */
   private buildTimer(): void {
     this.interval = setInterval(() => {
-      
+
       if (this.timeRemaining > 0) {
         this.timeRemaining--;
       } else {
