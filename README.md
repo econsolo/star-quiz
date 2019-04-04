@@ -43,3 +43,11 @@ $ ng serve
 - [x] Tela com apresentação de todos os jogadores e sua pontuação final (localStorage)
 - [x] Preparado para o [PWA](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br)
 - [x] Requisições para a [SWAPI](https://swapi.co/) cacheáveis (quando disponível o service-worker)
+
+
+### Dificuldades/Problemas
+
+1) A busca de imagens pode apresentar instabilidade por motivos desconhecidos. A API utilizada foi Google Cloud Search utilizando o nome do personagem como palavra chave.
+2) Algumas imagens podem variar a cada vez que é solicitada.
+3) Algumas imagens podem não fazer sentido com a palavra chave.
+4) No desenvolvimento, ocorreu problemas como estouro do limite diário de requisições e Http error 503 [(BackendError)](https://cloud.google.com/resource-manager/docs/core_errors)
